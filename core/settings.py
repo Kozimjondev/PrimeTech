@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,10 +43,6 @@ INSTALLED_APPS = [
     "drf_yasg",
     "corsheaders",
     "phonenumber_field",
-
-    'rest_framework.authtoken',
-    'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',
 
     'django_filters',
     'image_uploader_widget',
@@ -140,3 +137,17 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        # 'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.ScopedRateThrottle',
+
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        # 'anon': '3/hour',
+        'email-post': '3/hour',
+
+    }
+}
