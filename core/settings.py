@@ -43,12 +43,10 @@ INSTALLED_APPS = [
     'rest_framework',
     "drf_yasg",
     "corsheaders",
-    "phonenumber_field",
 
     'django_filters',
     'image_uploader_widget',
 
-    'redis',
 ]
 
 MIDDLEWARE = [
