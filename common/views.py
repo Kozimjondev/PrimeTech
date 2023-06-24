@@ -42,8 +42,8 @@ class AboutAPIView(APIView):
 
     @swagger_auto_schema(operation_summary='Biz haqimizda malumot olish')
     def get(self, request):
-        queryset = AboutUs.objects.all().last()
-        serializer = AboutSerializer(queryset, many=False)
+        queryset = AboutUs.objects.all()
+        serializer = AboutSerializer(queryset, many=True)
         return Response(serializer.data, status=200)
 
 
@@ -62,8 +62,8 @@ class ProjectAPIView(APIView):
 
     @swagger_auto_schema(operation_summary='Mijozlarga qilingan proyektlarni sonini ko`rish')
     def get(self, request):
-        queryset = ProjectNumber.objects.all().last()
-        serializer = ProjectSerializer(queryset, many=False)
+        queryset = ProjectNumber.objects.all()
+        serializer = ProjectSerializer(queryset, many=True)
         return Response(serializer.data, status=200)
 
 
@@ -72,8 +72,8 @@ class StatisticAPIView(APIView):
 
     @swagger_auto_schema(operation_summary='Mijozlar, xamkorlar, loyihalar sonini korish')
     def get(self, request):
-        queryset = Statistic.objects.all().last()
-        serializer = StatisticSerializer(queryset, many=False)
+        queryset = Statistic.objects.all()
+        serializer = StatisticSerializer(queryset, many=True)
         return Response(serializer.data, status=200)
 
 
@@ -141,6 +141,6 @@ class PortfolioImageView(APIView):
 
     @swagger_auto_schema(operation_summary="Portfolioni ko'rish")
     def get(self, request):
-        queryset = PortfolioImage.objects.all().last()
+        queryset = PortfolioImage.objects.all()
         serializer = PortfolioImageSerializer(queryset, many=True)
         return Response(serializer.data, status=200)
