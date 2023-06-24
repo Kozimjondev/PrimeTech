@@ -53,10 +53,12 @@ class AboutUs(BaseModel):
 
 
 class Statistic(BaseModel):
-    client = models.PositiveIntegerField(_("Client"), default=0)
-    support = models.PositiveIntegerField(_("Support"), default=0)
-    project = models.PositiveIntegerField(_("Project"), default=0)
-    freelance = models.PositiveIntegerField(_("Freelance experience"), default=0)
+    # client = models.PositiveIntegerField(_("Client"), default=0)
+    # support = models.PositiveIntegerField(_("Support"), default=0)
+    # project = models.PositiveIntegerField(_("Project"), default=0)
+    # freelance = models.PositiveIntegerField(_("Freelance experience"), default=0)
+    statistic_name = models.CharField(_("statistic"), max_length=150, null=True, blank=True)
+    number = models.PositiveSmallIntegerField(_("Number"), default=0)
 
     class Meta:
         verbose_name = _("Statistic")
@@ -80,10 +82,12 @@ class Staff(BaseModel):
 
 
 class ProjectNumber(BaseModel):
-    web_site = models.PositiveIntegerField(_("Web Site"), default=0)
-    mobile_app = models.PositiveIntegerField(_("Mobile app"), default=0)
-    crm = models.PositiveIntegerField(_("CRM"), default=0)
-    telegram_bot = models.PositiveIntegerField(_("Telegram bot"), default=0)
+    # web_site = models.PositiveIntegerField(_("Web Site"), default=0)
+    # mobile_app = models.PositiveIntegerField(_("Mobile app"), default=0)
+    # crm = models.PositiveIntegerField(_("CRM"), default=0)
+    # telegram_bot = models.PositiveIntegerField(_("Telegram bot"), default=0)
+    project_name = models.CharField(_("Project name"), max_length=150, null=True, blank=True)
+    number = models.PositiveSmallIntegerField(_("Number"), default=0)
 
     class Meta:
         verbose_name = _("Project number")
