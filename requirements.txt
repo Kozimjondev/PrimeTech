@@ -7,9 +7,9 @@ drf-yasg==1.21.5
 djangorestframework==3.14.0
 django-filter==23.1
 djangorestframework-simplejwt==5.2.2
-django-phonenumber-field==7.0.2
+# django-phonenumber-field==7.0.2
 pillow==9.5.0
-django-phonenumbers==1.0.1
+# django-phonenumbers==1.0.1
 # django-location-field
 # sorl-thumbnail==12.9.0
 # django-redis==5.2.0
